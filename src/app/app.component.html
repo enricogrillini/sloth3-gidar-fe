@@ -1,4 +1,39 @@
+<ng-container *ngIf="isLogged()">
+    <mat-toolbar>
 
-<a href="./first">Prova</a>
+        <button mat-icon-button class="example-icon" aria-label="Iconizza menu" (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span style="width:150px"> Gildar  </span>
 
-<router-outlet></router-outlet>
+        <span> {{pageTitle}} </span>
+        <div style="flex: 2"></div>
+        <span style="flex: 4">Search</span>
+        <div style="flex: 3"></div>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>pin</mat-icon>
+        </button>
+        <button mat-button class="example-icon" aria-label="Logout" (click)="logout()">
+            <mat-icon>logout</mat-icon> Logout
+        </button>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-container" >
+        <mat-sidenav *ngIf="isMenuCollapsed()" #sidenav [mode]="modeaa"  opened class="example-sidenav"
+            [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0">
+            <app-side-nav></app-side-nav>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content [formGroup]="options">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container>
+
+
+<ng-container *ngIf="!isLogged()">
+    <router-outlet></router-outlet>
+</ng-container>
