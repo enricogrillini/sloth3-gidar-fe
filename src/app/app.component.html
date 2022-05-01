@@ -4,7 +4,7 @@
         <button mat-icon-button class="example-icon" aria-label="Iconizza menu" (click)="toggleMenu()">
             <mat-icon>menu</mat-icon>
         </button>
-        <span style="width:150px"> Gildar  </span>
+        <span style="width:150px"> Gildar </span>
 
         <span> {{pageTitle}} </span>
         <div style="flex: 2"></div>
@@ -18,11 +18,10 @@
         </button>
     </mat-toolbar>
 
-    <mat-sidenav-container class="example-container" >
-        <mat-sidenav *ngIf="isMenuCollapsed()" #sidenav [mode]="modeaa"  opened class="example-sidenav"
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav *ngIf="isMenuCollapsed()" #sidenav [mode]="modeaa" opened class="example-sidenav"
             [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0">
             <app-side-nav></app-side-nav>
-
         </mat-sidenav>
 
         <mat-sidenav-content [formGroup]="options">

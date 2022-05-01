@@ -32,19 +32,28 @@
 </table>
 
 
+<!--mat-toolbar color="">
+
+
+  <button mat-raised-button matTooltip="Info about the action"
+    aria-label="Button that displays a tooltip when focused or hovered over">
+    Action
+  </button>
+  <mat-icon title="Export as CSV" matTooltip="Info about the action">save_alt</mat-icon>
+  asdsa <div style="flex: 2"></div>
+  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+
+  </mat-paginator>
+
+</mat-toolbar-->
+
 <mat-toolbar>
-  <mat-toolbar-row>
+  <button mat-icon-button color="primary" matTooltip="Info about the action" aria-label="Example icon button with a home icon">
+    <mat-icon>download</mat-icon> Excel
+  </button>
+  <div style="flex: 1 1 auto"></div>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="getPaginatorData($event)" aria-label="Select page">
+  </mat-paginator>
 
-    <button mat-raised-button
-        matTooltip="Info about the action"
-        aria-label="Button that displays a tooltip when focused or hovered over">
-  Action
-</button>
-    <mat-icon  title="Export as CSV" matTooltip="Info about the action">save_alt</mat-icon>
-    asdsa <div style="flex: 2"></div>
-    <mat-paginator [length]="100" [pageSize]="10" aria-label="Select page">
-
-    </mat-paginator>
-
-  </mat-toolbar-row>
 </mat-toolbar>
